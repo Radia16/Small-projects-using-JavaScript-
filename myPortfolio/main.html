@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Edu+VIC+WA+NT+Beginner:wght@600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Radia's Portfolio Website</title>
+  </head>
+  <style>
+    .tab-contents{
+        display: none;
+    }
+  </style>
+  <body>
+   
+    <!-- header section -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="my_images/logo.png" class="logo" >
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#service">Services</a></li>
+                    <li><a href="#portfolio">Porfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-align-justify" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                
+                <h1 class="myName">Hi! I am  Radia Ahmed   </h1>
+                <p class="myTag">Jr. Software Engineer</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About section -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="about-col-1">
+                    <img src="my_images/radia.jpg" >
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        This is Radia. I am from Dhaka, Bangladesh. Currently I am working as a Backend developer with a experience of 1 year plus 
+                        . My preferred framwork is Laravel and preferred languages are php, JavaScript, Html, CSS. I have done two projects using laravel framwork
+                        that are "BPPSHOP Ecommerce website" and "Restuarent Management System". You are watching my portfolio which is build by me. I am quick learner 
+                        and great as a team member. 
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <div class="tab-contents " id="skills">
+                        <ul>
+                            <li><span>WEB Development</span> <br> PHP (Laravel Framework)
+                            <br> JavaScript, JQuery <br> HTML, CSS, Bootstrap <br> MySQL
+                            <br>Git/Github knowledge <br> Basic Python, C++, Object-Oriented programming <br>Manual Testing
+                            </li>
+                            <li><span>Networking</span> <br> OSI/TCP Layer <br> Networking Topology
+                            <br> LAN, WAN, MAN <br>IP subnetting/subnetmask <br> Route/Routing</li>
+                            <li><span>Others</span> <br> Adobe Illustrator <br> Adobe Photoshop 
+                            <br> Basic SEO <br> Microsoft (Excel, Powerpoint, Word) <br> Knowledge on Google Functionality (Sheet,Google DOC etc.) </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Jr. Software Engineer</span> <br> Backend Developer <br> Excel IT AI, Eskaton, Dhaka <br>2021 (Novembar) - 2022 (Augest)</li>
+                            <li><span>Software Engineer Trainee</span> <br> Excel IT AI, Eskaton, Dhaka <br>2021 (April) - 2021 (Octobar)</li>
+                            <li><span>Tech Support Engineer</span> <br> GAO TEK Inc. (Remote) <br> 2021 (January) - 2021 (April)</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>BS.c</span> <br> BS.c in Information Communication Engineering,<br> East West University <br> 2016 - 2020</li>
+                            <li><span>HSC</span> <br> National Ideal College <br> 2015, Dhaka Board</li>
+                            <li><span>SSC</span> <br> National Ideal College <br> 2013, Dhaka Board</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Service section -->
+    <div id="service">
+        <div class="container">
+            <h1 class="sub-title"> My Services </h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-crop"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aliquam tempore saepe, debitis amet alias voluptatum officiis. Deleniti perspiciatis dolorem sapiente, nesciunt impedit optio reiciendis, voluptates explicabo fuga quam consequatur.</p>
+                    <a href="#">Learn More</a>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aliquam tempore saepe, debitis amet alias voluptatum officiis. Deleniti perspiciatis dolorem sapiente, nesciunt impedit optio reiciendis, voluptates explicabo fuga quam consequatur.</p>
+                    <a href="#">Learn More</a>
+                </div>
+
+                <div>
+                    <i class="fa-brands fa-figma"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aliquam tempore saepe, debitis amet alias voluptatum officiis. Deleniti perspiciatis dolorem sapiente, nesciunt impedit optio reiciendis, voluptates explicabo fuga quam consequatur.</p>
+                    <a href="#">Learn More</a>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-stamp"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aliquam tempore saepe, debitis amet alias voluptatum officiis. Deleniti perspiciatis dolorem sapiente, nesciunt impedit optio reiciendis, voluptates explicabo fuga quam consequatur.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                
+                
+
+            </div>
+        </div>
+    
+    </div>
+
+    <!-- Portfolio section -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title"> My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="my_images/p1.png" alt="">
+                    <div class="layer">
+                        <h3 > Showing country information using XMLHTTPRequest through API</h3>
+                        <a href="http://127.0.0.1:5500/project1.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="my_images/p2.PNG" alt="">
+                    <div class="layer">
+                        <h3> Dead jokes from API using Promises </h3>
+                        <a href="http://127.0.0.1:5500/project2.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="my_images/p3.PNG" alt="">
+                    <div class="layer">
+                        <h3> Light OFF/ON</h3>
+                        <a href="http://127.0.0.1:5500/project3.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="my_images/p4.png" alt="">
+                    <div class="layer">
+                        <h3>Thermometer Increasing!! </h3>
+                        <a href="http://127.0.0.1:5500/project4.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="my_images/p5.PNG" alt="">
+                    <div class="layer">
+                        <h3>Temperature Calculation</h3>
+                        <a href="http://127.0.0.1:5500/project5.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="my_images/p6.PNG" alt="">
+                    <div class="layer">
+                        <h3> Set Counter </h3>
+                        <a href="http://127.0.0.1:5500/project6.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                
+                <div class="work">
+                    <img src="my_images/p7.PNG" alt="">
+                    <div class="layer">
+                        <h3> My NoteBook </h3>
+                        <a href="http://127.0.0.1:5500/project7.html"><i class="fa-thin fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="my_images/p8.PNG" alt="">
+                    <div class="layer">
+                        <h3>Calculator</h3>
+                        <a href="http://127.0.0.1:5500/project8.html"><i class="fa-thin fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                
+                <div class="work">
+                    <img src="my_images/p9.PNG" alt="">
+                    <div class="layer">
+                        <h3> Analog Clock </h3>
+                        <a href="http://127.0.0.1:5500/project9.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                
+                <div class="work">
+                    <img src="my_images/p10.PNG" alt="">
+                    <div class="layer">
+                        <h3> Tic-Tac-Toe Game</h3>
+                        <a href="http://127.0.0.1:5500/project10.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="my_images/p11.PNG" alt="">
+                    <div class="layer">
+                        <h3> Quiz App</h3>
+                        <a href="http://127.0.0.1:5500/project11.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- <a href="#" class="btn">See More</a> -->
+
+        </div>
+    </div>
+    <!-- Contact form section -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <h3>radia.radi1316@gmail.com</h3>
+                    <h3>(+88) 01682419791</h3>
+                    <div class="social-icon">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp-square"></i></a>
+                        <a href="#"><i class="fa-brands fa-git-square"></i></a>
+                    </div>
+                    <a href="my_images/Radia Ahmed-CV.pdf" download class="btn btn2">Download My CV</a>
+                </div>
+                <div class="contact-right">
+                    <form action="#" name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="conatct@gmail.com" required>
+                        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right">
+            <p>Copyright © Made with <i class="fa-solid fa-heart"></i> by Radia Ahmed - 2022 </p>
+        </div>
+    </div>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+   <script src="script.js"></script>
+   <script>
+    
+    // const activeData = document.querySelectorAll('.tab-links');
+    // console.log('ghjhj');
+
+    // const button = document.querySelectorAll('.tab-links')
+    // console.log(button);
+    // const showData = document.querySelectorAll('.tab-contents')
+    // console.log(showData);
+    // button.addEventListener('click', () => {
+    // if (showData.style.display === 'none') {
+    //     showData.style.display = 'block'
+    // } else {
+    //     showData.style.display = 'none'
+    // }
+    //     console.log("dfvghj")
+    // })
+   
+
+       
+
+   </script>
+  </body>
+</html>

@@ -1,0 +1,288 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@600&display=swap" rel="stylesheet">
+    <title> Quiz App </title>
+</head>
+<body>
+
+    <style>
+         *, *::after, *::before {
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0;
+            padding: 0;
+            /* font-family: 'Edu VIC WA NT Beginner', cursive;  */
+            background: hsl(1000, 92%, 94%);
+        }
+
+        .main-div{
+            width: 100%;
+            min-height: 100%;
+            display: grid;
+            place-items: center;
+        }
+
+        .inner-div{
+            width:80vw;
+            height: 75vh;
+            background-color: rgb(152, 233, 229);
+            padding-left: 3rem;
+            padding-right: 4rem;
+            border-radius: 1rem;
+            box-shadow:0 1rem 1rem -0.6rem rgba(0, 0, 0, .3);
+            justify-content: center;
+        }
+
+        .inner-div h2{
+            font-size: 35px;
+            margin: 1rem;
+            position: relative;
+        }
+
+        .inner-div li {
+            font-size: 25px;
+             margin-top: 10px;
+             list-style: none;
+             position: relative;
+        }
+
+        input {
+            cursor: pointer;
+        }
+
+        #submit, .btn{
+         padding: 1rem 3rem;
+         display: block;
+         margin: auto;
+         outline: none;
+         font-size: large;
+         border: none;
+         color: aliceblue;
+         background-color: rgb(149, 173, 227);
+         margin-top: 1rem;
+         text-transform: uppercase;
+           
+        }
+
+        #submit:hover{
+            background-color: rgb(54, 101, 134);
+        }
+
+        #showScore{
+            background-color: hsl(0, 90%, 92%);
+            margin-top: 1rem;
+            padding:3rem 4rem;
+            border-radius: 5%;
+            box-shadow: 0 1rem 1rem -0.6rem rgba(0, 0, 0, .4);  
+        }
+
+        #showScore h3 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        #showScore .btn{
+            margin-top: 1rem;
+            background-color: #c887a5;
+            color: blueviolet;
+        }
+
+        .scoreArea {
+            display: none;
+        }
+    </style>
+
+    <div class="main-div">
+        <div class="inner-div">
+            <h2 class="question">Question comes here</h2>
+            <ul>
+                <li>
+                    <input type="radio" name="answer" id="ans1" class="answer">
+                    <label for="ans1" id="option1"> Answer option</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="ans2" class="answer">
+                    <label for="ans2" id="option2"> Answer option</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="ans3" class="answer">
+                    <label for="ans3" id="option3"> Answer option</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="ans4" class="answer">
+                    <label for="ans4" id="option4"> Answer option</label>
+                </li>    
+            </ul>
+            <button id="submit"> Submit </button>
+            <div id="showScore" class="scoreArea">
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        const quiz = [
+            {
+                question: "Q1: Inside which HTML element do we put the JavaScript?",
+                a: "<script>",
+                b: "<javascript>",
+                c: "<js>",
+                d: "<scripting>",
+                ans:"ans1"
+            },
+            {
+                question: "Q2: What is the correct JavaScript syntax to change the content of the HTML element below? <p id='demo'>This is a demonstration.</p>",
+                a: "document.getElementById('demo').innerHTML = 'Hello World!';",
+                b: "document.getElementByName('p').innerHTML = 'Hello World!';  ",
+                c: "document.getElement('p').innerHTML = 'Hello World!';",
+                d: "#demo.innerHTML = 'Hello World!'",
+                ans:"ans1"
+            },
+            {
+                question: "Q3: Where is the correct place to insert a JavaScript?",
+                a: "The <body> section",
+                b: "Both the <head> section and the <body> section are correct ",
+                c: "The <head> section",
+                d: "no where",
+                ans:"ans2"
+            },
+
+            {
+                question: "Q4: What is the correct syntax for referring to an external script called 'xxx.js'?",
+                a: "<script src='xxx.js'>",
+                b: "<script name='xxx.js'>",
+                c: "<script herf='xxx.js'>",
+                d: "above all",
+                ans:"ans1"
+            },
+            {
+                question: "Q5: How do you write 'HEllo World' in an alert box?",
+                a: "alert('Hello World');",
+                b: "alertBox('Hello World');",
+                c: "msg('Hello World');",
+                d: "msgBox('Hello World');",
+                ans:"ans1"
+            },
+            {
+                question: "Q6: How do you create a function in JavaScript?",
+                a: "function myFunction()  ",
+                b: "function = myFunction()",
+                c: "function:myFunction()",
+                d: "above all",
+                ans:"ans1"
+            },
+            {
+                question: "Q7: How do you call a function named 'myFunction'?",
+                a: "if i = 5",
+                b: "if (i == 5)",
+                c: "if i == 5 then",
+                d: "if i = 5 then",
+                ans:"ans2"
+            },
+            {
+                question: "Q8: How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
+                a: "if (i <> 5)",
+                b: "if (i != 5)",
+                c: "if i <> 5",
+                d: "if i =! 5 then",
+                ans:"ans2"
+            },
+            {
+                question: "Q9: How does a WHILE loop start?",
+                a: "while i = 1 to 10",
+                b: "while (i <= 10; i++)",
+                c: "while (i <= 10)",
+                d: "above all",
+                ans:"ans3"
+            },
+
+            {
+                question: "Q10: What is the correct way to write a JavaScript array?",
+                a: "var colors = 'red', 'green', 'blue'",
+                b: "var colors = (1:'red', 2:'green', 3:'blue')",
+                c: "var colors = (1='red', 2=:'green', 3='blue')",
+                d: "var colors = ['red', 'green', 'blue'] ",
+                ans:"ans4"
+            }
+            
+        ];
+
+      const questions = document.querySelector('.question');
+      const option1   = document.querySelector('#option1');
+      const option2   = document.querySelector('#option2');
+      const option3   = document.querySelector('#option3');
+      const option4   = document.querySelector('#option4');
+      const submit    = document.querySelector('#submit');
+      const answers   = document.querySelectorAll('.answer');
+      const showScore = document.querySelector('#showScore');
+
+      let questionCount = 0;
+      let score = 0;
+
+
+      const loadquestion = () => {
+        const questionList = quiz[questionCount];
+
+        //console.log(questionList);
+        questions.innerText = questionList.question;
+        //console.log(questions.innerText);
+        option1.innerText = questionList.a;
+        option2.innerText = questionList.b;
+        option3.innerText = questionList.c;
+        option4.innerText = questionList.d;
+      }
+
+      loadquestion();
+
+      const getCheckAnswer = () => {
+        let myAnswer;
+
+        answers.forEach((currentElement) => {
+            if(currentElement.checked){
+                myAnswer = currentElement.id;
+            }
+        });
+        return myAnswer;
+      };
+
+      const deselect = () => {
+        answers.forEach((currentElement) => currentElement.checked = false);
+      }
+
+      submit.addEventListener('click', () => {
+         const checkAnswer = getCheckAnswer();
+         console.log(checkAnswer);
+
+         if(checkAnswer === quiz[questionCount].ans){
+            score++;
+         };
+
+         questionCount++;
+
+         deselect();
+
+         if(questionCount < quiz.length){
+            loadquestion();
+         }else{
+            showScore.innerHTML = `
+            <h3> Your Score ${score}/${quiz.length} 🙌</h3>
+            <button class="btn" onclick="location.reload()"> Play Again!!</button>
+            `;
+
+            showScore.classList.remove('scoreArea');
+         }
+
+      })
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, JavaScript world!</title>
+    <style>
+      h1{
+        color: blue;
+        text-align: center;
+        margin-top: 20px;
+      }
+      p{
+        text-align: center;
+        /* background-color: yellow; */
+      }
+     .button{
+       text-align: center;
+       cursor: pointer;
+      }
+      h3{
+        color: rebeccapurple;
+        text-align: center;
+        margin-top: 30px;
+
+      }
+      .events_btn{
+        text-align: center;
+        cursor: pointer;
+      }
+      .main-div{
+        margin-bottom: 10rem;
+      }
+
+
+     
+     
+    </style>
+  </head>
+  <body>
+    <!-- <h1>JavaScript Practice|| DOM & BOM</h1>
+
+    <h3  id="y"></h3>
+    <button type="button" class="btn btn-success" onclick="goback()"> Go Back to the previouse page </button> -->
+    
+    <div class="main-div">
+        <!-- <div class="child-one">
+          <p> I am child One</p>
+        </div>
+        <div class="child-two">
+          <p>I am child Two</p>
+        </div>
+        <div class="child-three">
+          <p>I am child Three</p>
+        </div> -->
+        <p class="nasek"> Passori </p>
+        <p class="nasek"> jhfghu gnrth rahrgruh arghnrntju</p>
+
+        <h1 id="heading1"> Change the heading </h1>
+        <div class="button">
+          <button id="btn" class="btn btn-danger" onclick="change()" >Click Here.</button>
+        </div>
+
+        <div class="events">
+          <h3> Same Event calling in 4 ways in JS </h3>
+        </div>
+        <hr>
+        <div class="content">
+          <div class="events_btn">
+            <button class="btn btn-dark"  onclick="alert('this is simple inline alert events')">
+                <span> Inline Event alert </span>  
+            </button><br><br>
+
+            <button class="btn btn-info"  onclick="callingfunc()">
+              <span> Event calling <br> by function </span>  
+            </button>
+            <br><br>
+
+            <button class="btn btn-primary"  id="eventcallingbyId">
+              <span> Event calling <br> by Id </span>  
+            </button>
+            <br><br>
+
+            <button class="btn btn-warning eventlistener">
+              <span> Event calling by <br> AddEventlistener </span>  
+            </button>
+            
+            <h3> Event Objects </h3>
+            <hr>
+
+            <button class="btn btn-success " id="eventobj">
+              <span> Event Object </span>  
+            </button>
+
+            <h3> Mouse Event </h3>
+            <p id="myp" onmousedown="mousedown()" onmouseup="mouseup()"> click me !!
+            </p>
+            <div id="box"> efgvtr </div>
+
+            <div>
+            <h3>Keyboard Magic</h3>
+            <input type="text" class="keyboard" onkeypress="keypress()" onkeydown="keydown()" onkeyup="keyup()" >
+            <p id="keys"></p>
+            </div>
+            <br>
+            <h3>Event Change in form Selection</h3>
+
+            <hr>
+
+
+            <div class="form">
+              <label for=""> Your Name 👉</label>
+              <input type="text" id="name" >
+              <br>
+              <label for=""> Choose your favourite flavor 🍦 <br>
+                <select name="icecream" id="icecream" onchange="selectElement()">
+                  <option value="">Select any..</option>
+                  <option value="chocolate">Chocolate</option>
+                  <option value="vanilla">Vanilla</option>
+                  <option value="mango">Mango</option>
+                </select>
+              </label>
+              <br>
+              <div id="result"></div>
+
+            </div>
+
+            <h3>Timing Based JS</h3>
+            <hr>
+            <div>
+              <p > Want to see my name ? 😛 </p>
+              <p id="showmyname"></p>
+              <div class="button">
+                <button id="btn" class="btn btn-danger" onclick="dusto()" >Click Here.</button>
+              </div>
+            </div>
+
+            <br>
+
+            <p id="setInterval">Seeing SetInterval and SetTimeOut</p>
+            <div class="button">
+              <button id="btn_interval" class="btn btn-outline-warning">START</button>
+              <button id="btn_stopInterval" class="btn btn-outline-danger">STOP</button>
+            </div>
+            <hr>
+          </div>
+
+          <h3> Event propagation </h3>
+
+          <div class="parentDiv " id="parentId">
+            <div class="childDiv" id="childId"></div>
+          </div>
+
+        </div>
+    </div>
+
+
+
+    <script>
+      // function goback(){
+      //   window.history.back();
+      //   console.log("what happen?");
+      // }
+
+      // alert(location.href); /** it shows current URL */
+      // console.log("bhgfb");
+      // if(confirm("want to visit this page")){
+      //   location.href = "https://www.w3schools.com/"
+      // }
+
+      const child2 = document.querySelector('.class-two');
+      //console.log(child2);\
+
+      const change = () => {
+        //console.log("running");
+        //document.getElementById('heading1').innerHTML="Radia Rocks!!"; /** this is directly writing js */
+        /** we can write by taking references */
+        const headingChange = document.getElementById('heading1');
+        headingChange.innerHTML = "This is Reference JS writing.Check your VS code index.html";
+
+        /** queryselector  matches the first value from the matching element */
+        const xx = document.querySelector('.nasek').innerHTML="Ei Nasek Nasek Apal Gilaa..";
+
+        /** querySelectorAll only count the elements*/
+        const yy = document.querySelectorAll('h1');
+        //console.log(yy);
+
+      }
+ 
+      const para = document.getElementsByClassName('nasek');
+      //console.log(para);
+
+      
+      // Events in JS
+      // Same event calling in 4 ways
+      const eventcallbyfunc = callingfunc = () => {
+        alert(" This is an event which calling by function");
+      }
+
+      const eventcallingbyId = document.getElementById("eventcallingbyId");
+      eventcallingbyId.onclick = function() {
+        alert('This Event called by Id');
+      }
+
+      const eventlistener = document.querySelector('.eventlistener');
+      eventlistener.addEventListener('click',() => {
+        alert('This Event is called using Add Eent Listener');
+      });
+
+      const eventobject = document.getElementById('eventobj');
+      const checkevent = () => {
+        alert('Watching Event object ');
+        console.log(event.target);
+      }
+
+      eventobject.addEventListener('click',checkevent);
+
+      //mouse event
+      function mousedown(){
+        document.getElementById('myp').style.color = "red";
+      }
+
+      function mouseup(){
+        document.getElementById('myp').innerHTML = "You are my sunshine";
+
+      }
+
+      const enter = document.getElementById('box');
+      enter.addEventListener('mouseenter', ()=>{
+        enter.style.backgroundColor="pink";
+        console.log('happening in');
+      } );
+      enter.addEventListener('mouseleave',()=>{
+        enter.style.backgroundColor = "purple";
+        console.log('happening out');
+      })
+
+      const keys = document.getElementById('keys');
+      // const keypress = () => {
+      //   keys.innerHTML=` pressing ${event.key} and its keyboad code ${event.code}` 
+      // }
+
+      const keyup = () => {
+        keys.innerHTML=` key is Up`;
+      }
+
+      const keydown = () => {
+        keys.innerHTML =`key is down`;
+      }
+
+      const selectElement = () => {
+        const nameinput = document.getElementById('name').value;
+        const selectelement = document.getElementById('icecream').value;
+        console.log( nameinput,selectelement);
+        const output = document.getElementById('result');
+        console.log(output);
+        output.innerHTML = `${nameinput} choose ${selectelement} flavor 😊`;
+      }
+     
+      // =================== Timing based Js ==========================//
+
+      const button = document.getElementById('btn');
+      const  dusto = () => {
+        const myName = document.getElementById('showmyname');
+        myName.innerHTML = "Please wait for a while....🤚";
+        //console.log(myName);
+        setTimeout(() => {
+          myName.innerHTML = " RADIA ROCKS ";
+        },1000);
+
+      }
+
+      const stopNum = document.querySelector('#setInterval');
+      const btn = document.querySelector('#btn_interval');
+      const btn1 = document.querySelector('#btn_stopInterval');
+      let num = 0;
+      let timeref;
+
+      const stop_set = () =>{
+        stopNum.innerHTML = "Count down begins....🗡";
+
+       timeref = setInterval(()=>{
+          stopNum.innerHTML = `${num}`;
+          num++;
+        },1000)
+      }
+      btn.addEventListener('click',stop_set);
+      btn1.addEventListener('click',() => {
+        clearInterval(timeref);
+      })
+      
+
+      const parentId = document.getElementById('parentId');
+      const childId = document.getElementById('childId');
+
+    </script>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

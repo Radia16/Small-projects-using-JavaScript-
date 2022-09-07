@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Project 2 || Dead Jokes </title>
+  </head>
+  <body>
+    <div>
+        <h1 style="text-align:center;color:blueviolet;"> Project - 2 [Dead Jokes || using Promises and Aysnc Await function] </h1>
+    </div>
+
+    <div  id="container" style="text-align:center">
+        <br><br>
+        <h3> Dead jokes to make your day ruin 🤣🐱‍🚀</h3>
+        <div id="jokes">💣 Awsome jokes are loading. . . .</div>
+        <br><br>
+        <button type="button" id="joke_btn" class="btn btn-danger">Press button to see next joke 👈</button>
+    </div>
+  
+    <script>
+
+        const jokes = document.querySelector('#jokes');
+        const joke_btn = document.querySelector('#joke_btn');
+
+       
+//this is done by Promises
+        // const generateJokes = () => {
+
+             /** we need to tell that the content will be a json data for that 
+                we set a header. a header will set as object*/
+            // const setHeader = {
+            //     headers : {
+            //         Accept : "application/json"
+            //     }
+            // }
+
+        //     fetch('https://icanhazdadjoke.com/',setHeader)
+        //     .then((response) => 
+        //         response.json()
+        //         /* if it is a fat arrow function then it don need to return typr of {} parenthesis*/
+        //         //console.log(response.json());
+
+        //     ).then((data) => {
+        //        //console.log(jokes.innerHTML = data.joke); 
+        //        jokes.innerHTML = data.joke;
+
+        //     })
+        //     .catch((error) => {
+        //         console.log(error);
+        //     })
+        // }
+
+        // joke_btn.addEventListener('click',generateJokes);
+
+
+// this is done by async await function 
+// async await make promises more easy and simple
+
+        const generateJokes = async () => {
+            try{
+                    const setHeader = {
+                    headers : {
+                        Accept : "application/json"
+                    }
+                }
+    
+              const response = await fetch('https://icanhazdadjoke.com/',setHeader);
+              const data = await  response.json() ;         
+              jokes.innerHTML = data.joke;
+            }catch(error){
+                console.log(error);
+            }
+
+        }
+
+        joke_btn.addEventListener('click',generateJokes);
+
+    </script>
+    
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
